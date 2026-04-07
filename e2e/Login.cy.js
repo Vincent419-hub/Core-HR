@@ -5,7 +5,7 @@ describe('Login Test', () => {
     cy.get('#identifier').type('vincent.dorkenoo@thedigicoast.com');
     cy.get('#password').type('Cenzoo@89');
 
-    cy.get('.inline-flex').click();
+    cy.get('button[type="submit"]').click();
 
     cy.url().should('include', '/dashboard');
   });
