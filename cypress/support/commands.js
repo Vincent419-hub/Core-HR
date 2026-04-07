@@ -23,11 +23,3 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-
-Cypress.Commands.add('login', () => {
-  cy.visit('https://staging.d15w5iepb3k3l1.amplifyapp.com/');
-  cy.get('#identifier').type(Cypress.env('email'));
-  cy.get('#password').type(Cypress.env('password'));
-  cy.get('button[type="submit"]').click();
-  cy.url().should('include', '/dashboard');
-});
